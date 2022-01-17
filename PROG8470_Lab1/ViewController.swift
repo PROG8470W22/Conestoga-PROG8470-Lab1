@@ -9,9 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var step = 1 {
+    var stepValue = 1 {
         didSet {
-            buttonStep.setTitle("Step = \(step)", for: .normal)
+            buttonStep.setTitle("Step = \(stepValue)", for: .normal)
         }
     }
     var outputValue = 0 {
@@ -28,9 +28,9 @@ class ViewController: UIViewController {
     func changeValue(change: ChangeType) {
         switch change {
         case .add:
-            outputValue += step
+            outputValue += stepValue
         case .subtract:
-            outputValue -= step
+            outputValue -= stepValue
         }
     }
 
@@ -51,7 +51,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func touchUpInsideStepButton(_ sender: Any) {
-        step = step == 1 ? 2 : 1
+        stepValue = stepValue == 1 ? 2 : 1
     }
 }
 
